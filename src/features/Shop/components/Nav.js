@@ -14,7 +14,7 @@ const Nav = styled.div`
   @media screen and (min-height: 400px) {
     font-size: 5rem;
   }
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 768px) {
     font-size: 5rem;
   }
   opacity: 0.7;

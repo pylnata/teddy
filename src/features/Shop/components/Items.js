@@ -6,7 +6,7 @@ const Items = styled.div`
   display: flex;
   padding: 10px;
   height: 100%;
-  @media screen and (max-width: 767px) and (orientation: portrait) {
+  @media screen and (max-width: 768px) and (orientation: portrait) {
     height: 15%;
     min-height: 30px;
     width: 100%;
@@ -54,7 +54,7 @@ const ItemsLeft = styled(Items)`
   flex-direction: column;
   justify-content: space-around;
 
-  @media screen and (max-width: 767px) and (orientation: portrait) {
+  @media screen and (max-width: 768px) and (orientation: portrait) {
     ${mixinLeft}
   }
 
@@ -67,7 +67,7 @@ const ItemsRight = styled(Items)`
   flex-direction: column;
   justify-content: space-around;
   align-items: flex-end;
-  @media screen and (max-width: 767px) and (orientation: portrait) {
+  @media screen and (max-width: 768px) and (orientation: portrait) {
     ${mixinLeft}
   }
 `;

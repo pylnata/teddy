@@ -20,7 +20,7 @@ export const Button = styled.div`
   &:hover {
     transform: scale(1.1);
   }
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 768px) {
     font-size: 1rem;
     padding: 1rem;
   }
@@ -89,7 +89,7 @@ export const Task = styled.div`
   grid-template-rows: repeat(3, minmax(24%, 1fr));
   grid-gap: 1%;
 
-  @media screen and (max-height: 667px) and (orientation: portrait) {
+  @media screen and (max-height: 960px) and (orientation: portrait) {
     height: 42%;
   }
 

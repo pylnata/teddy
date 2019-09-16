@@ -16,7 +16,7 @@ export const GameContainer = styled.div`
     "items-left cart items-right"
     "items-left items-bottom items-right";
 
-    @media screen and (max-width: 767px) and (orientation: portrait) {
+    @media screen and (max-width: 768px) and (orientation: portrait) {
     display: flex;
     flex-direction: column;
     align-items: center;
