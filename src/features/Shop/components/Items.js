@@ -34,6 +34,11 @@ const Items = styled.div`
       max-height: 25px;
     }
 
+    @media screen and (max-height: 213px) {
+      max-width: 20px;
+      max-height: 20px;
+    }
+
   }
 `;
 

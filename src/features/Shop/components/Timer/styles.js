@@ -16,6 +16,16 @@ font-size: 3rem;
   min-height: 100px;
 }
 
+@media screen and (max-height: 213px) {
+  height: 50px;
+  min-height: 50px;
+}
+
+@media screen and (max-height: 667px) {
+  height: 100px;
+  min-height: 100px;
+}
+
 @media screen and (min-width: 568px) {
   font-size: 5rem;
 }
@@ -60,7 +70,7 @@ export const TimerThreadCss = `
   top: 30%;
   margin-left: 47%;
 
-  @media screen and (max-height: 568px) {
+  @media screen and (max-height: 667px) {
     width: 1px;
 }
 

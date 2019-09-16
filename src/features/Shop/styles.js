@@ -35,13 +35,13 @@ export const ShopContainer = styled.div`
 width: 100%;
 padding: 70px 0 10px 0;
 
-@media screen and (max-height: 568px) {
+@media screen and (max-height: 667px) {
   padding-top: 20px;
 }
 
 display: flex;
 height: 100%;
 //min-height: 400px;
-min-width: 320px;
+min-width: 230px;
 justify-content: center;
 position: relative;`
