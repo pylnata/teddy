@@ -21,14 +21,14 @@ export const Button = styled.div`
     transform: scale(1.1);
   }
   @media screen and (max-width: 767px) {
-    font-size: 1.6rem;
+    font-size: 1rem;
     padding: 1rem;
   }
 `;
 
 export const Rules = styled.div`
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1000;
@@ -37,9 +37,9 @@ export const Rules = styled.div`
   font-size: 2rem;
   background-color: #fff;
   color: #333;
-  padding: 2rem;
-  width: 90%;
-  min-height: 90%;
+  padding: 3rem;
+  width: 40%;
+  min-height: 40%;
   border-radius: 10px;
   text-align: center;
 
@@ -50,7 +50,14 @@ export const Rules = styled.div`
 
   @media screen and (max-width: 320px) {
     font-size: 1rem;
+    width: 70%;
   }
+
+  @media screen and (max-height: 320px) {
+    font-size: 1rem;
+    width: 45%;
+  }
+
 
 `;
 export const Container = styled.div`
@@ -63,21 +70,21 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   padding-top: 15%;
-
+  position: relative;
   width: 70%;
-  color: #333;
 `;
 
 export const Task = styled.div`
   position: relative;
-  width: 55%;
+  width: 65%;
+  height: 65%;
   display: grid;
-  grid-template-columns: repeat(4, minmax(25%, 1fr));
-  grid-template-rows: repeat(3, minmax(25%, 1fr));
+  grid-template-columns: repeat(4, minmax(24%, 1fr));
+  grid-template-rows: repeat(3, minmax(24%, 1fr));
   grid-gap: 1%;
 
   @media screen and (max-width: 768px) and (min-width:600px) {
-    width: 45%;
+  //  width: 45%;
   }
 
 
@@ -100,9 +107,9 @@ export const Task = styled.div`
       min-width: 20px;
       min-height: 20px;
       @media screen and (max-width: 768px) {
-        padding: 3px;
-        max-width: 40px;
-        max-height: 40px;
+//        padding: 3px;
+//        max-width: 40px;
+//        max-height: 40px;
       }
     }
     &.gray {

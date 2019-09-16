@@ -15,13 +15,15 @@ export const GameContainer = styled.div`
   grid-template-areas:
     "items-left cart items-right"
     "items-left items-bottom items-right";
-  @media screen and (max-width: 767px) {
+
+    @media screen and (max-width: 767px) and (orientation: portrait) {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
   }
-  @media screen and (max-height: 400px) {
+
+  @media screen and (max-height: 480px) and (orientation: portrait) {
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -6,25 +6,30 @@ const Items = styled.div`
   display: flex;
   padding: 10px;
   height: 100%;
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 767px) and (orientation: portrait) {
     height: 15%;
     min-height: 30px;
     width: 100%;
   }
   img {
-    max-width: 60px;
-    max-height: 60px;
+    width: 60px;
+    height: 60px;
     cursor: pointer;
-    width: 100%;
-    height: 100%;
+    //width: 100%;
+    //height: 100%;
+
 
     @media screen and (max-width: 768px) {
       max-width: 40px;
       max-height: 40px;
-
     }
 
     @media screen and (max-width: 320px) {
+      max-width: 25px;
+      max-height: 25px;
+    }
+
+    @media screen and (max-height: 320px) {
       max-width: 25px;
       max-height: 25px;
     }
@@ -44,7 +49,7 @@ const ItemsLeft = styled(Items)`
   flex-direction: column;
   justify-content: space-around;
 
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 767px) and (orientation: portrait) {
     ${mixinLeft}
   }
 
@@ -57,26 +62,22 @@ const ItemsRight = styled(Items)`
   flex-direction: column;
   justify-content: space-around;
   align-items: flex-end;
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 767px) and (orientation: portrait) {
     ${mixinLeft}
   }
-
 `;
 
-const mixinBottom = `
-
-align-items: center;
-`;
 
 const ItemsBottom = styled(Items)`
   grid-area: items-bottom;
-  justify-content: space-between;
-  @media screen and (min-width: 768px) {
-    width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  width: 95%;
+  height: 5%;
+  @media screen and (min-width: 768px) and (orientation: portrait) {
+    //width: 100%;
   }
-  @media screen and (max-width: 767px) {
-    ${mixinBottom}
-  }
+
 
 `;
 

@@ -17,7 +17,6 @@ export default props => {
 
   return (
     <Container>
-      <Task>
         {status !== 'playing' && (
             <Rules>
               {status === 'win' && (<><img src={list} alt="" /> Well done!</>)}
@@ -26,6 +25,8 @@ export default props => {
               <Button onClick={reset}>New game!</Button>
             </Rules>
         )}
+
+      <Task>
         {productsToBuy.map((item, i) => (
             <animated.div key={`p${i}`}
               className={`item ${item.selected ? null : "gray"}`}
