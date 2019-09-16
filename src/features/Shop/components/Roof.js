@@ -14,6 +14,9 @@ const RoofEl = styled.div`
   background-color: #e74c3c;
   width: 90px;
   height: 50px;
+  @media screen and (max-height: 480px) {
+    height: 30px;
+  }
   &:nth-child(odd) {
     background-color: #fff;
   }

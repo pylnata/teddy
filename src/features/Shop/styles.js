@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const GameContainer = styled.div`
   max-width: 990px;
   height: 95vh;
+  max-height: 900px;
   width: 100%;
   background: rgba(255, 255, 255, 0.7);
   position: relative;
@@ -31,9 +32,14 @@ export const GameContainer = styled.div`
 export const ShopContainer = styled.div`
 width: 100%;
 padding: 70px 0 10px 0;
+
+@media screen and (max-height: 480px) {
+  padding: 20px;
+}
+
 display: flex;
 height: 100%;
-min-height: 400px;
+//min-height: 400px;
 min-width: 320px;
 justify-content: center;
 position: relative;`

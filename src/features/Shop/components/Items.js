@@ -8,6 +8,7 @@ const Items = styled.div`
   height: 100%;
   @media screen and (max-width: 767px) {
     height: 15%;
+    min-height: 30px;
     width: 100%;
   }
   img {
@@ -16,9 +17,16 @@ const Items = styled.div`
     cursor: pointer;
     width: 100%;
     height: 100%;
-    @media screen and (min-width: 768px) {
-      min-width: 50px;
-      min-height: 50px;
+
+    @media screen and (max-width: 768px) {
+      max-width: 40px;
+      max-height: 40px;
+
+    }
+
+    @media screen and (max-width: 320px) {
+      max-width: 25px;
+      max-height: 25px;
     }
 
   }
@@ -39,9 +47,7 @@ const ItemsLeft = styled(Items)`
   @media screen and (max-width: 767px) {
     ${mixinLeft}
   }
-  @media screen and (max-height: 400px) {
-    ${mixinLeft}
-  }
+
 `;
 
 const ItemsRight = styled(Items)`
@@ -54,9 +60,7 @@ const ItemsRight = styled(Items)`
   @media screen and (max-width: 767px) {
     ${mixinLeft}
   }
-  @media screen and (max-height: 400px) {
-    ${mixinLeft}
-  }
+
 `;
 
 const mixinBottom = `
@@ -73,9 +77,7 @@ const ItemsBottom = styled(Items)`
   @media screen and (max-width: 767px) {
     ${mixinBottom}
   }
-  @media screen and (max-height: 400px) {
-    ${mixinBottom}
-  }
+
 `;
 
 export default ({ images, select }) => {

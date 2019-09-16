@@ -6,7 +6,12 @@ const Nav = styled.div`
   width: 10%;
   color: #fff;
   font-size: 10rem;
-  @media screen and (max-height: 400px) {
+
+  @media screen and (max-width: 320px) {
+    display: none;
+  }
+
+  @media screen and (min-height: 400px) {
     font-size: 5rem;
   }
   @media screen and (max-width: 767px) {

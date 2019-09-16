@@ -47,6 +47,11 @@ export const Rules = styled.div`
     font-size: 1.6rem;
     padding: 1rem;
   }
+
+  @media screen and (max-width: 320px) {
+    font-size: 1rem;
+  }
+
 `;
 export const Container = styled.div`
   grid-area: cart;
@@ -58,17 +63,24 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   padding-top: 15%;
+
   width: 70%;
   color: #333;
 `;
 
 export const Task = styled.div`
   position: relative;
-  width: 65%;
+  width: 55%;
   display: grid;
   grid-template-columns: repeat(4, minmax(25%, 1fr));
   grid-template-rows: repeat(3, minmax(25%, 1fr));
   grid-gap: 1%;
+
+  @media screen and (max-width: 768px) and (min-width:600px) {
+    width: 45%;
+  }
+
+
   > div {
     background-image: linear-gradient(
       to right bottom,
@@ -80,10 +92,18 @@ export const Task = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding: 5px;
+
     img {
       width: 100%;
       height: 100%;
+      min-width: 20px;
+      min-height: 20px;
+      @media screen and (max-width: 768px) {
+        padding: 3px;
+        max-width: 40px;
+        max-height: 40px;
+      }
     }
     &.gray {
       filter: url(${filter}#grayscale);

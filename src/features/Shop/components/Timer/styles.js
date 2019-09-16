@@ -5,10 +5,18 @@ display: block;
 width: 100%;
 height: 100%;
 min-height: 150px;
+max-height: 180px;
 background-color: ${balloonColor};
 border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
 color: #fff;
 font-size: 5rem;
+@media screen and (max-height: 480px) {
+  font-size: 2rem;
+  height: 100px;
+  min-height: 100px;
+
+}
+
 padding: 0px;
 display: flex;
 align-items: center;
@@ -27,17 +35,12 @@ z-index: 20;
   left: 30%;
   bottom: -6%;
   z-index: 20;
+  @media screen and (max-height: 480px) {
+      border-left-width:10px;
+      border-right-width: 10px;
+  }
 }
 
-&-before {
-  width: 2px;
-  height: 80%;
-  background: #000;
-  position: absolute;
-  z-index: 1;
-  top: 100%;
-  margin-left: 50%;
-}
 `;
 export const TimerThreadCss = `
   width: 2px;
@@ -47,4 +50,9 @@ export const TimerThreadCss = `
   z-index: 1;
   top: 30%;
   margin-left: 47%;
+
+  @media screen and (max-height: 480px) {
+    width: 1px;
+}
+
 `;
