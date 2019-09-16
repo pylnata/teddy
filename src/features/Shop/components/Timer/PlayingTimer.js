@@ -10,7 +10,7 @@ const TimerThread = styled.div`${TimerThreadCss}`;
 const PlayingTimer = props => {
   const propsTimer = useSpring({
     from: { number: 25, transform: "scale(1)" },
-    to: [{ number: 0, transform: "scale(1.4)", config: { duration: 2500 } }],
+    to: [{ number: 0, transform: "scale(1.4)", config: { duration: 25000 } }],
     number: 0,
     onRest: props.onRestHandler,
     reset: props.reset

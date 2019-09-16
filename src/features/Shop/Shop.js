@@ -84,6 +84,7 @@ const Shop = props => {
   };
 
   const select = e => {
+    if (status !== "playing") return;
     const foundIndex = productsToBuy.findIndex(
       item => e.target.alt === item.name && !item.selected
     );

@@ -29,7 +29,7 @@ width: 100%;
       background-position: 50% 0%;
       position: absolute;
       top: 70%;
-      right: -40%;
+      right: -35%;
 `
 
 export default ({status, fail}) => {

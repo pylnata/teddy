@@ -41,10 +41,10 @@ z-index: 20;
 `;
 export const TimerThreadCss = `
   width: 2px;
-  height: 37%;
+  height: 57%;
   background: #000;
   position: absolute;
   z-index: 1;
-  top: 50%;
-  margin-left: 50%;
+  top: 30%;
+  margin-left: 47%;
 `;

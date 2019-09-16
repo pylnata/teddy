@@ -64,7 +64,7 @@ export const Container = styled.div`
 
 export const Task = styled.div`
   position: relative;
-  width: 55%;
+  width: 65%;
   display: grid;
   grid-template-columns: repeat(4, minmax(25%, 1fr));
   grid-template-rows: repeat(3, minmax(25%, 1fr));
