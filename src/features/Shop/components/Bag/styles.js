@@ -47,7 +47,7 @@ export const Rules = styled.div`
   width: 40%;
   border-radius: 10px;
   text-align: center;
-
+  
   @media screen and (max-width: 991px) {
     font-size: 1.6rem;
     padding: 1rem;

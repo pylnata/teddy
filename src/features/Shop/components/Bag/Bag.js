@@ -19,7 +19,7 @@ export default props => {
     <Container>
         {status !== 'playing' && (
             <Rules>
-              {status === 'win' && (<><img src={list} alt="" /> Well done!</>)}
+              { (status === 'win' ) && (<>Well done!</>)}
               {status === 'fail' && 'Try one more time!'}
               {!status && 'Click at products and pack a bag in 25 seconds!'}
               <Button onClick={reset}>New game!</Button>

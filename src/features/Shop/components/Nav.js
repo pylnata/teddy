@@ -27,7 +27,7 @@ const Nav = styled.div`
     transition: 0.1s all;
   }
   a:hover {
-    font-size: 12rem;
+    color: #333;
   }
 `;
 
