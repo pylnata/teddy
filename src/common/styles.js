@@ -1,5 +1,16 @@
-import React from "react";
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes }  from "styled-components"
+import bg from "../features/Shop/images/bg.png";
+
+export const Game = styled.div`
+justify-content: center;
+height: 100%;
+min-height: 100vh;
+width: 100%;
+background-image: url(${bg});
+display: flex;
+justify-content: space-between;
+align-items: center;
+`
 
 const hourglass = keyframes`
 0% {
@@ -14,7 +25,7 @@ const hourglass = keyframes`
   transform: rotate(1800deg);
 }`;
 
-const Loader = styled.div`
+export const Loader = styled.div`
   display: block;
   position: absolute;
   width: 64px;
@@ -35,5 +46,3 @@ const Loader = styled.div`
     animation: ${hourglass} 1.2s infinite;
   }
 `;
-
-export default () => <Loader />;

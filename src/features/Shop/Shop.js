@@ -1,62 +1,21 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { Link } from "react-router-dom";
-import { animated, useSpring } from "react-spring";
 
-import Timer from "./Timer";
-import Bag from "./Bag";
+import Bag from "./components/Bag/Bag";
+import Items from "./components/Items";
+import Nav from "./components/Nav";
+import Roof from "./components/Roof";
+import Control from "./components/Control";
 
-import "./Shop.scss";
+import { Game, Loader } from "../../common/styles";
+import { GameContainer, ShopContainer } from "./styles";
 
-/*
-import tomato from "../../assets/img/items/tomato.svg";
-import onion from "../../assets/img/items/onion.svg";
-import potato from "../../assets/img/items/potato.svg";
-import broccoli from "../../assets/img/items/broccoli.svg";
-import cabbage from "../../assets/img/items/cabbage.svg";
-import carrot from "../../assets/img/items/carrot.svg";
-
-import watermelon from "../../assets/img/items/watermelon.svg";
-import bananas from "../../assets/img/items/bananas.svg";
-import grape from "../../assets/img/items/grapes.svg";
-import orange from "../../assets/img/items/orange.svg";
-import apple from "../../assets/img/items/apple.svg";
-import strawberry from "../../assets/img/items/strawberry.svg";
-import pineapple from "../../assets/img/items/pineapple.svg";
-
-import milk from "../../assets/img/items/milk.svg";
-import pasta from "../../assets/img/items/pasta.svg";
-import croissant from "../../assets/img/items/croissant.svg";
-import mustard from "../../assets/img/items/mustard.svg";
-import cake from "../../assets/img/items/cake.svg";
-import eggs from "../../assets/img/items/eggs.svg";
-import jam from "../../assets/img/items/jam.svg";
-*/
-
-const vegetables = [
-  "tomato",
-  "onion",
-  "potato",
-  "broccoli",
-  "cabbage",
-  "carrot"
-];
-const fruits = [
-  "watermelon",
-  "bananas",
-  "grapes",
-  "orange",
-  "apple",
-  "strawberry",
-  "pineapple"
-];
-const other = ["milk", "pasta", "croissant", "mustard", "eggs", "jam"];
+import { vegetables, fruits, other } from "./config";
 
 const Shop = props => {
   const [images, setImages] = useState({});
+  const [imagesReadyCnt, setImagesReadyCnt] = useState(0);
   const [productsToBuy, setProductsToBuy] = useState([]);
   const [status, setStatus] = useState(null); // playing, fail, win
-  const [showFailMessage, setShowFailMessage] = useState(false);
-  const [showWinMessage, setShowWinMessage] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(-1);
 
   const setRandomItems = useCallback(() => {
@@ -83,44 +42,44 @@ const Shop = props => {
   // import and preload images
   useEffect(() => {
     const importedImages = {};
-    const r = require.context("./images/items/", false, /\.(png|jpe?g|svg)$/);
+    const r = require.context("./images/", true, /\.(png|jpe?g|svg)$/);
+    let i = 0;
     r.keys().forEach(item => {
-      importedImages[item.replace("./", "")] = r(item);
+      const importedImg = r(item);
+      importedImages[item.replace("./", "").replace("items/", "")] = importedImg;
+      const img = new Image();
+      img.onload = () => {
+        i++;
+        setImagesReadyCnt(i);
+      };
+      img.src = importedImg;
     });
-    setImages(importedImages);
 
+    setImages(importedImages);
     setRandomItems();
   }, [setRandomItems]);
 
-  const propsBalloon = useSpring({
-    from: { transform: `scale(0)` },
-    to: { transform: `scale(${status === "fail" ? 1 : 0})` },
-    delay: 1000
-  });
 
-  if (Object.keys(images).length < 1) {
-    // not imported
-    return null;
+  if (Object.keys(images).length !== imagesReadyCnt || imagesReadyCnt < 1) {
+    return (
+      <Game>
+        <Loader />
+      </Game>
+    );
   }
 
-  const roof = Array.from({ length: 11 }, (v, k) => k).map((v, i) => (
-    <div key={i} className="roof__el"></div>
-  ));
+
 
   const fail = () => {
     setStatus("fail");
-    setShowFailMessage(true);
   };
 
   const win = () => {
     setStatus("win");
-    setShowFailMessage(false);
-    setShowWinMessage(true);
   };
 
   const reset = () => {
     setStatus("playing");
-    setShowFailMessage(false);
     setRandomItems();
   };
 
@@ -136,33 +95,19 @@ const Shop = props => {
       };
       setProductsToBuy(newProductsToBuy);
       setSelectedIndex(foundIndex);
-
       if (newProductsToBuy.findIndex(item => item.selected === false) === -1) {
         win();
       }
     }
   };
 
-  const timer = <Timer onRestHandler={fail} />;
-
   return (
-    <div className="game-shop">
-      {/*
-      <Modal modalClosed={reset} show={showFailMessage}>
-        Try next time!
-      </Modal>
-*/}
+    <Game>
+      <Nav type="back" />
+      <GameContainer>
+        <Roof />
 
-      <div className="nav nav--back">
-        <Link to="/" title="Back to home">
-          &larr;
-        </Link>
-      </div>
-
-      <div className="shop">
-        <div className="roof">{roof}</div>
-
-        <div className="shop-main">
+        <ShopContainer>
           <Bag
             productsToBuy={productsToBuy}
             images={images}
@@ -171,70 +116,14 @@ const Shop = props => {
             selectedIndex={selectedIndex}
           />
 
-          <div className="shop-main__right">
-              <button onClick={reset} className="btn" style={{opacity: status !== "playing" ? 1: 0 }}>
-                Play!
-              </button>
+          <Control fail={fail} />
+        </ShopContainer>
 
-            <div className="control">
-              <div className="control__timer-container">
-                {showFailMessage ? (
-                  <>
-                    <div className="confetti-button animate" />
-                    <animated.div
-                      style={propsBalloon}
-                      className="control__timer control__timer--noactive"
-                    >
-                      25
-                    </animated.div>
-                    <div className="control__timer-before"></div>
-                  </>
-                ) : status === "playing" ? (
-                  timer
-                ) : (
-                  <>
-                  <div className="control__timer control__timer--noactive">
-                    25
-                  </div>
-                  <div className="control__timer-before"></div>
-                  </>
-                )}
-              </div>
-            </div>
-          </div>
-        </div>
+        <Items images={images} select={select} />
+      </GameContainer>
 
-        <div className="items items--left">
-          {vegetables.map((name, i) => (
-            <div key={i}>
-              <img src={images[name + ".svg"]} alt={name} onClick={select} />
-            </div>
-          ))}
-        </div>
-
-        <div className="items items--right">
-          {other.map((name, i) => (
-            <div key={i}>
-              <img src={images[name + ".svg"]} alt={name} onClick={select} />
-            </div>
-          ))}
-        </div>
-
-        <div className="items items--bottom">
-          {fruits.map((name, i) => (
-            <div key={i}>
-              <img src={images[name + ".svg"]} alt={name} onClick={select} />
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="nav nav--next">
-        <Link to="/" title="Next game">
-          &rarr;
-        </Link>
-      </div>
-    </div>
+      <Nav type="next" />
+    </Game>
   );
 };
 

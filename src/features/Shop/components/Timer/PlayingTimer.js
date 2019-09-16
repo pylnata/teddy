@@ -1,10 +1,16 @@
 import React from "react";
 import { useSpring, animated } from "react-spring";
+import styled from "styled-components";
 
-export default props => {
+import {TimerCss, TimerThreadCss} from "./styles";
+
+const Timer = styled(animated.div)`${TimerCss}`;
+const TimerThread = styled.div`${TimerThreadCss}`;
+
+const PlayingTimer = props => {
   const propsTimer = useSpring({
     from: { number: 25, transform: "scale(1)" },
-    to: [{ number: 0, transform: "scale(1.4)", config: { duration: 25000 } }],
+    to: [{ number: 0, transform: "scale(1.4)", config: { duration: 2500 } }],
     number: 0,
     onRest: props.onRestHandler,
     reset: props.reset
@@ -19,10 +25,12 @@ export default props => {
 
   return (
     <>
-      <animated.div className="control__timer" style={propsTimer2}>
+      <Timer style={propsTimer2}>
         {propsTimer2.text}
-      </animated.div>
-      <div className="control__timer-before"></div>
+      </Timer>
+      <TimerThread />
     </>
   );
 };
+
+export { PlayingTimer }

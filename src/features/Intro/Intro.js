@@ -9,7 +9,7 @@ import Sun from "./components/Sun";
 import Ballon from "./components/Ballon";
 import Bird from "./components/Bird";
 import Rainbow from "./components/Rainbow";
-import Loader from "./components/Loader";
+import { Loader } from "../../common/styles";
 
 const Intro = styled.div`height: 100vh;
 width: 100%;
