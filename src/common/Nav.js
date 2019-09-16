@@ -35,9 +35,9 @@ const NavNext = styled(Nav)`
   text-align: right;
 `;
 
-export default ({ type }) => {
+export default ({ type, to }) => {
   const link = (
-    <Link to={type === "back" ? "/" : ""}>
+    <Link to={to}>
       {type === "back" ? <>&larr;</> : <>&rarr;</>}
     </Link>
   );

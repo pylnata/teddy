@@ -1,0 +1,51 @@
+.draggable-main {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  user-select: none;
+  font-family: 'Raleway', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f0f0f0;
+}
+
+.content {
+  position: relative;
+  width: 320px;
+  height: 240px;
+}
+
+.content > div {
+  cursor: pointer;
+
+  position: absolute;
+  width: 320px;
+  height: 90px;
+  overflow: visible;
+  pointer-events: auto;
+  transform-origin: 50% 50% 0px;
+  border-radius: 5px;
+  color: white;
+  line-height: 90px;
+  padding-left: 32px;
+  font-size: 14.5px;
+  background: lightblue;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.content > div:nth-child(1) {
+  background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+}
+.content > div:nth-child(2) {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+.content > div:nth-child(3) {
+  background: linear-gradient(135deg, #5ee7df 0%, #b490ca 100%);
+}
+.content > div:nth-child(4) {
+  background: linear-gradient(135deg, #c3cfe2 0%, #c3cfe2 100%);
+}

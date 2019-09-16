@@ -5,6 +5,7 @@ import { useTransition, animated } from "react-spring";
 import useRouter from "./hooks/useRouter";
 import Intro from "./features/Intro/Intro";
 import Shop from "./features/Shop/Shop";
+import Puzzle from "./features/Puzzle/Puzzle";
 
 
 const App = props => {
@@ -22,6 +23,7 @@ const App = props => {
     <animated.div key={key} style={props}>
       <Switch location={item}>
         <Route path="/shop" exact component={Shop} />
+        <Route path="/puzzle" exact component={Puzzle} />
         <Route path="/" exact component={Intro} />
         <Redirect to="/" />
       </Switch>

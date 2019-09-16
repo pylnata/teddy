@@ -46,3 +46,4 @@ export const Loader = styled.div`
     animation: ${hourglass} 1.2s infinite;
   }
 `;
+

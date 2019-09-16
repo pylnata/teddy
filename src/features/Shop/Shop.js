@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 
 import Bag from "./components/Bag/Bag";
 import Items from "./components/Items";
-import Nav from "./components/Nav";
+import Nav from "../../common/Nav";
 import Roof from "./components/Roof";
 import Control from "./components/Control";
 
@@ -104,7 +104,7 @@ const Shop = props => {
 
   return (
     <Game>
-      <Nav type="back" />
+      <Nav type="back" to="/" />
       <GameContainer>
         <Roof />
 
@@ -123,7 +123,7 @@ const Shop = props => {
         <Items images={images} select={select} />
       </GameContainer>
 
-      <Nav type="next" />
+      <Nav type="next" to="/puzzle" />
     </Game>
   );
 };
