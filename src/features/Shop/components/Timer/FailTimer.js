@@ -63,7 +63,7 @@ const Bum = styled.div`
     background-repeat: no-repeat;
   }
   &:before {
-    top: -75%;
+    top: -35%;
     display: block;
     animation: ${topBubbles} ease-in-out 0.75s forwards;
     background-image: radial-gradient(
@@ -89,13 +89,13 @@ const Bum = styled.div`
       radial-gradient(circle, ${balloonColorLight} 50%, transparent 20%),
       radial-gradient(circle, ${balloonColorLight} 50%, transparent 20%),
       radial-gradient(circle, ${balloonColorLight} 50%, transparent 20%);
-    background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%,
-      15% 15%, 10% 10%, 18% 18%;
+    background-size: 2% 2%, 4% 4%, 7% 7%, 4% 4%, 9% 9%, 5% 5%,
+      3% 3%, 5% 5%, 2% 2%;
   }
   &:after {
     display: block;
     animation: ${bottomBubbles} ease-in-out 0.75s forwards;
-    bottom: -75%;
+    bottom: -35%;
     background-image: radial-gradient(
         circle,
         ${balloonColorLight} 50%,
@@ -112,8 +112,8 @@ const Bum = styled.div`
       radial-gradient(circle, ${balloonColorLight} 50%, transparent 20%),
       radial-gradient(circle, ${balloonColorLight} 50%, transparent 20%),
       radial-gradient(circle, ${balloonColorLight} 50%, transparent 20%);
-    background-size: 35% 35%, 50% 50%, 28% 28%, 50% 50%, 35% 35%, 20% 20%,
-      50% 50%;
+    background-size: 5% 5%, 6% 6%, 7% 7%, 8% 8%, 9% 9%, 10% 10%,
+      5% 5%;
   }
 `;
 

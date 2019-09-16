@@ -33,7 +33,7 @@ export default props => {
                 item.selected && selectedIndex === i ? propsSelected : null
               }
             >
-              {item.name}
+              {/* item.name */}
               <img src={images[item.name + ".svg"]} alt="" />
             </animated.div>
         ))}

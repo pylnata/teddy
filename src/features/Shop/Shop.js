@@ -116,7 +116,7 @@ const Shop = props => {
             selectedIndex={selectedIndex}
           />
 
-          <Control fail={fail} />
+          <Control fail={fail} status={status} />
         </ShopContainer>
 
         <Items images={images} select={select} />

@@ -7,9 +7,9 @@ export const Button = styled.div`
   border: 1px #77c76e solid;
   background: #60af56;
   color: #fff;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 500;
-  padding: 10px;
+  padding: 1rem;
   border-radius: 30px;
   margin-top: 10%;
   cursor: pointer;
@@ -19,6 +19,10 @@ export const Button = styled.div`
   transition: 0.2s all;
   &:hover {
     transform: scale(1.1);
+  }
+  @media screen and (max-width: 767px) {
+    font-size: 1.6rem;
+    padding: 1rem;
   }
 `;
 
@@ -30,13 +34,19 @@ export const Rules = styled.div`
   z-index: 1000;
   display: flex;
   flex-direction: column;
-  font-size: 2.5rem;
+  font-size: 2rem;
   background-color: #fff;
   color: #333;
   padding: 2rem;
-  width: 80%;
+  width: 90%;
+  min-height: 90%;
   border-radius: 10px;
   text-align: center;
+
+  @media screen and (max-width: 767px) {
+    font-size: 1.6rem;
+    padding: 1rem;
+  }
 `;
 export const Container = styled.div`
   grid-area: cart;

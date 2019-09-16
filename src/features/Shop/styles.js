@@ -14,7 +14,7 @@ export const GameContainer = styled.div`
   grid-template-areas:
     "items-left cart items-right"
     "items-left items-bottom items-right";
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     display: flex;
     flex-direction: column;
     align-items: center;

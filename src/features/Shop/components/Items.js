@@ -5,32 +5,38 @@ import { vegetables, fruits, other } from "../config";
 const Items = styled.div`
   display: flex;
   padding: 10px;
-  @media screen and (min-height: 400px) {
-    height: 100%;
+  height: 100%;
+  @media screen and (max-width: 767px) {
+    height: 15%;
+    width: 100%;
   }
   img {
-    width: 100%;
-    height: 100%;
     max-width: 60px;
     max-height: 60px;
     cursor: pointer;
+    width: 100%;
+    height: 100%;
+    @media screen and (min-width: 768px) {
+      min-width: 50px;
+      min-height: 50px;
+    }
+
   }
 `;
 
 const mixinLeft = `
 flex-direction: row;
 padding-top: 0;
-justify-content: center;
 align-items: center;`;
 
 const ItemsLeft = styled(Items)`
   width: 100%;
-  padding-top: 30px;
+  padding-top: 50px;
   grid-area: items-left;
   flex-direction: column;
   justify-content: space-around;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     ${mixinLeft}
   }
   @media screen and (max-height: 400px) {
@@ -40,11 +46,12 @@ const ItemsLeft = styled(Items)`
 
 const ItemsRight = styled(Items)`
   width: 100%;
-  padding-top: 30px;
+  padding-top: 50px;
   grid-area: items-right;
   flex-direction: column;
   justify-content: space-around;
-  @media screen and (max-width: 768px) {
+  align-items: flex-end;
+  @media screen and (max-width: 767px) {
     ${mixinLeft}
   }
   @media screen and (max-height: 400px) {
@@ -53,7 +60,7 @@ const ItemsRight = styled(Items)`
 `;
 
 const mixinBottom = `
-justify-content: center;
+
 align-items: center;
 `;
 
@@ -63,7 +70,7 @@ const ItemsBottom = styled(Items)`
   @media screen and (min-width: 768px) {
     width: 100%;
   }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     ${mixinBottom}
   }
   @media screen and (max-height: 400px) {
