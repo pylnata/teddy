@@ -89,7 +89,7 @@ export const Task = styled.div`
   grid-template-rows: repeat(3, minmax(24%, 1fr));
   grid-gap: 1%;
 
-  @media screen and (min-width:500px) and (max-height: 667px) and (orientation: portrait) {
+  @media screen and (max-height: 667px) and (orientation: portrait) {
     height: 42%;
   }
 
