@@ -39,17 +39,13 @@ export const Rules = styled.div`
   color: #333;
   padding: 3rem;
   width: 40%;
-  min-height: 40%;
+  //min-height: 40%;
   border-radius: 10px;
   text-align: center;
 
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 991px) {
     font-size: 1.6rem;
     padding: 1rem;
-  }
-
-  @media screen and (max-width: 320px) {
-    font-size: 1rem;
     width: 70%;
   }
 
@@ -77,7 +73,7 @@ export const Container = styled.div`
 export const Task = styled.div`
   position: relative;
   width: 65%;
-  height: 65%;
+  height: 55%;
   display: grid;
   grid-template-columns: repeat(4, minmax(24%, 1fr));
   grid-template-rows: repeat(3, minmax(24%, 1fr));

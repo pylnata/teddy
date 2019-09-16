@@ -9,12 +9,15 @@ max-height: 180px;
 background-color: ${balloonColor};
 border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
 color: #fff;
-font-size: 5rem;
-@media screen and (max-height: 480px) {
+font-size: 3rem;
+@media screen and (max-height: 568px) {
   font-size: 2rem;
   height: 100px;
   min-height: 100px;
+}
 
+@media screen and (min-width: 568px) {
+  font-size: 5rem;
 }
 
 padding: 0px;
@@ -35,10 +38,16 @@ z-index: 20;
   left: 30%;
   bottom: -6%;
   z-index: 20;
-  @media screen and (max-height: 480px) {
-      border-left-width:10px;
+  @media screen and (max-height: 568px) {
+    border-left-width:10px;
       border-right-width: 10px;
   }
+
+  @media screen and (max-width: 768px) {
+    border-left-width:10px;
+      border-right-width: 10px;
+  }
+
 }
 
 `;
@@ -51,7 +60,7 @@ export const TimerThreadCss = `
   top: 30%;
   margin-left: 47%;
 
-  @media screen and (max-height: 480px) {
+  @media screen and (max-height: 568px) {
     width: 1px;
 }
 

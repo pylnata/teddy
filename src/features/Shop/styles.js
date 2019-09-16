@@ -35,8 +35,8 @@ export const ShopContainer = styled.div`
 width: 100%;
 padding: 70px 0 10px 0;
 
-@media screen and (max-height: 480px) {
-  padding: 20px;
+@media screen and (max-height: 568px) {
+  padding-top: 20px;
 }
 
 display: flex;
