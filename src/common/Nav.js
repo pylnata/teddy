@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-const Nav = styled.div`
+const NavSection = styled.div`
   width: 10%;
   color: #fff;
   font-size: 10rem;
@@ -31,17 +31,19 @@ const Nav = styled.div`
   }
 `;
 
-const NavNext = styled(Nav)`
+const NavNext = styled(NavSection)`
   text-align: right;
 `;
 
-export default ({ type, to }) => {
+const Nav = ({ type, to }) => {
   const link = (
     <Link to={to}>
       {type === "back" ? <>&larr;</> : <>&rarr;</>}
     </Link>
   );
 
-  if (type === "back") return <Nav>{link}</Nav>;
+  if (type === "back") return <NavSection>{link}</NavSection>;
   else return <NavNext>{link}</NavNext>;
 };
+
+export { Nav };

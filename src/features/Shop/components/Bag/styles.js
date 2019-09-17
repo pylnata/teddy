@@ -3,34 +3,7 @@ import styled from "styled-components";
 import bag from "../../images/bag.png";
 import filter from "../../images/filter.svg";
 
-export const Button = styled.div`
-  border: 1px #77c76e solid;
-  background: #60af56;
-  color: #fff;
-  font-size: 2rem;
-  font-weight: 500;
-  padding: 1rem;
-  border-radius: 30px;
-  margin-top: 10%;
-  cursor: pointer;
-  font-family: "Indie Flower", cursive, -apple-system;
-  text-transform: uppercase;
-  transform: scale(1);
-  transition: 0.2s all;
-  &:hover {
-    transform: scale(1.1);
-  }
-  @media screen and (max-width: 768px) {
-    font-size: 1rem;
-    padding: 1rem;
-  }
-  @media screen and (max-height: 213px) {
-    margin-top: 0;
-    padding: 0;
-    font-size: .9rem;
-  }
 
-`;
 
 export const Rules = styled.div`
   position: absolute;
@@ -47,7 +20,7 @@ export const Rules = styled.div`
   width: 40%;
   border-radius: 10px;
   text-align: center;
-  
+
   @media screen and (max-width: 991px) {
     font-size: 1.6rem;
     padding: 1rem;

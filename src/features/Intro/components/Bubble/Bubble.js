@@ -125,8 +125,8 @@ export default props => {
         <Circular>Hello! Where are we going?</Circular>
       </animated.div>
       <Games style={propsGames}>
-        <Game click={selectGame} img={images["shop-game.svg"]} />
-        <Game click={selectGame} img={images["shop-game.svg"]} />
+        <Game click={()=>selectGame('shop')} img={images["shop-game.svg"]} />
+        <Game click={()=>selectGame('puzzle')} img={images["puzzle-game.svg"]} />
       </Games>
     </Dialog>
   );

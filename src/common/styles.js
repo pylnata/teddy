@@ -1,16 +1,24 @@
-import styled, { keyframes }  from "styled-components"
-import bg from "../features/Shop/images/bg.png";
+import styled, { keyframes } from "styled-components";
+
+export { Nav } from "./Nav";
+export { Roof } from "./Roof";
 
 export const Game = styled.div`
-justify-content: center;
-height: 100%;
-min-height: 100vh;
-width: 100%;
-background-image: url(${bg});
-display: flex;
-justify-content: space-between;
-align-items: center;
-`
+  justify-content: center;
+  height: 100%;
+  min-height: 100vh;
+  width: 100%;
+  background-image: ${({ filter}) => {
+      return filter
+        ? " linear-gradient(to bottom, rgba(0,0,0,.3), rgba(0,0,0,.5)), "
+        : "";
+    }}
+    url(${({ bg }) => bg});
+  background-size: ${({ size }) => size};
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
 
 const hourglass = keyframes`
 0% {
@@ -47,3 +55,30 @@ export const Loader = styled.div`
   }
 `;
 
+export const Button = styled.div`
+  border: 1px #77c76e solid;
+  background: #60af56;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 500;
+  padding: 1rem;
+  border-radius: 30px;
+  margin-top: 10%;
+  cursor: pointer;
+  font-family: "Indie Flower", cursive, -apple-system;
+  text-transform: uppercase;
+  transform: scale(1);
+  transition: 0.2s all;
+  &:hover {
+    transform: scale(1.1);
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+  @media screen and (max-height: 213px) {
+    margin-top: 0;
+    padding: 0;
+    font-size: 0.9rem;
+  }
+`;

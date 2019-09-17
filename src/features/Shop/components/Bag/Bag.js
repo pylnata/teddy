@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSpring, animated } from "react-spring";
 
-import { Button, Rules, Task, Container } from "./styles";
+import { Rules, Task, Container } from "./styles";
 
-import list from "../../images/done.svg";
+import { Button } from "../../../../common/styles";
 
 export default props => {
   const { productsToBuy, images, status, selectedIndex, reset} = props;

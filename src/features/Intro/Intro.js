@@ -87,9 +87,9 @@ export default props => {
     setImages(importedImages);
   }, []);
 
-  const selectGameHandler = event => {
+  const selectGameHandler = (game) => {
     setSelectedGame(true);
-    setTimeout(() => props.history.push("/shop"), 1500);
+    setTimeout(() => props.history.push("/" + game), 1500);
   };
 
   if (Object.keys(images).length !== imagesReadyCnt || imagesReadyCnt < 1) {

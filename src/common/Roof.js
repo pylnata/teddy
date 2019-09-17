@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const Roof = styled.div`
+const RoofContainer = styled.div`
   overflow: hidden;
   position: absolute;
   top: 0;
@@ -22,10 +22,12 @@ const RoofEl = styled.div`
   }
 `;
 
-export default () => {
+const Roof = () => {
   const content = Array.from({ length: 11 }, (v, k) => k).map((v, i) => (
     <RoofEl key={i}></RoofEl>
   ));
 
-  return <Roof>{content}</Roof>
+  return <RoofContainer>{content}</RoofContainer>
 };
+
+export { Roof };

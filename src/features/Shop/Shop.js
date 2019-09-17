@@ -2,14 +2,15 @@ import React, { useState, useEffect, useCallback } from "react";
 
 import Bag from "./components/Bag/Bag";
 import Items from "./components/Items";
-import Nav from "../../common/Nav";
-import Roof from "./components/Roof";
+import { Nav, Roof } from "../../common/styles";
 import Control from "./components/Control";
 
 import { Game, Loader } from "../../common/styles";
 import { GameContainer, ShopContainer } from "./styles";
 
+
 import { vegetables, fruits, other } from "./config";
+import bg from "./images/bg.png";
 
 const Shop = props => {
   const [images, setImages] = useState({});
@@ -103,7 +104,7 @@ const Shop = props => {
   };
 
   return (
-    <Game>
+    <Game bg={bg} size="cover">
       <Nav type="back" to="/" />
       <GameContainer>
         <Roof />
