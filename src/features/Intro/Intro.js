@@ -64,6 +64,26 @@ const CarWithBubble = styled.div`
   }
 `;
 
+const Bottom = styled.div`
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-end;
+  align-items:flex-end;
+  padding-right:20px;
+  width: 100%;
+  font-size:1.6rem;
+  z-index: 1000;
+  bottom: 1%;
+  color: #fff;
+  > a:link,
+  a:active,
+  a:visited {
+    color: #fff;
+  }
+`;
+
+
 export default props => {
   const [selectedGame, setSelectedGame] = useState(false);
   const [imagesReadyCnt, setImagesReadyCnt] = useState(0);
@@ -115,6 +135,16 @@ export default props => {
         />
         <Car selectedGame={selectedGame} images={images} />
       </CarWithBubble>
+
+      <Bottom>
+        <div>Made by  <a href="http://github.com/pylnata">@pylnata</a> </div>
+        <div style={{fontSize: '1.7rem'}}>
+          Icons from{" "} <a href="https://www.flaticon.com/" title="Flaticon">
+            www.flaticon.com
+          </a>
+        </div>
+      </Bottom>
+
     </Intro>
   );
 };

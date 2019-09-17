@@ -101,9 +101,9 @@ export default ({ images }) => {
   };
 
   return (
-    <a href="http://github.com/" title="Star me on github">
       <Github>
         <div>
+        <a href="http://github.com/pylnata" title="Star me on github" style={{zIndex:1000}}>
           <Eyes>
             <EyeLeft style={propsEye}>
               <Ball style={propsBall} />
@@ -112,8 +112,8 @@ export default ({ images }) => {
               <Ball style={propsBall} />
             </Eye>
           </Eyes>
+          </a>
         </div>
       </Github>
-    </a>
   );
 };
