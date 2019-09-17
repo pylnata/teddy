@@ -8,6 +8,7 @@ import DraggableList from "./components/DraggableList";
 import bg from "./images/bg.png";
 
 import { useImagesContext } from "../../contexts/ImagesContext";
+import { useSpring, animated } from "react-spring";
 
 export default () => {
   const { images } = useImagesContext();
@@ -16,37 +17,45 @@ export default () => {
 
   // import and preload images
   useEffect(() => {
-    if(Object.keys(images).length > 0) {
+    if (Object.keys(images).length > 0) {
       setCurrentImage(images["1.png"]);
     }
   }, [images]);
 
   let content = (
-    <DraggableList items={"1 2 3 4 5".split(" ")} setCompleted={setCompleted} img={currentImage} />
+    <DraggableList
+      items={"1 2 3 4 5".split(" ")}
+      setCompleted={setCompleted}
+      img={currentImage}
+    />
   );
+
+  const propsImage = useSpring({
+    from: { transform: "scale(1)" },
+    to: [{ transform: "scale(1.1)" }, { transform: "scale(1)" }]
+  });
 
   if (completed) {
     content = (
       <WinContainer>
-          <img src={currentImage} alt="" />
+        <animated.img src={currentImage} alt="" style={propsImage} />
       </WinContainer>
     );
   }
 
-  const select = (event) => {
+  const select = event => {
     const image = event.target.closest("img");
-    if(image) {
-        setCurrentImage(image.src);
-        setCompleted(false);
-      }
-  }
-
+    if (image) {
+      setCurrentImage(image.src);
+      setCompleted(false);
+    }
+  };
 
   return (
     <Game bg={bg} size="400px" filter="1">
       <Nav type="back" to="/shop" />
       <GameContainer>
-        <Puzzles >
+        <Puzzles>
           <div className="left" onClick={select}>
             <img src={images["1.png"]} alt="" />
             <img src={images["2.png"]} alt="" />
@@ -54,7 +63,7 @@ export default () => {
             <img src={images["4.png"]} alt="" />
           </div>
 
-            {content}
+          {content}
         </Puzzles>
       </GameContainer>
     </Game>
