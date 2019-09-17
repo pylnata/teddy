@@ -22,9 +22,24 @@ const rotate = keyframes`
 `;
 
 let height = 450;
-if(window.screen.availHeight === 600) {
-//  height = 350;
+
+if (window.screen.availHeight <= 768) {
+  height = 320;
 }
+
+if (window.screen.availHeight <= 640 || window.screen.availWidth <= 412 ) {
+  height = 300;
+}
+
+if (window.screen.availHeight <= 480) {
+  height = 300;
+}
+if (window.screen.availHeight <= 384) {
+  height = 200;
+}
+
+console.log(window.screen.availHeight, height);
+
 
 export const WinContainer = styled.div`
   margin: 0 auto;
@@ -82,15 +97,16 @@ export const Puzzles = styled.div`
   align-items: center;
   flex-direction: column;
   height: 90%;
+  width:95%;
 
   .left {
     align-self: center;
     display: flex;
     justify-content: space-between;
     height: 15%;
-    min-height: 70px;
-    margin-bottom: 40px;
-    width: 100%;
+    width: 50%;
+    max-height: 50px;
+    margin-bottom: 3%;
     > img {
       height: 100%;
       border: 2px solid #ffffff;
@@ -117,7 +133,7 @@ export const Content = styled.div`
     cursor: pointer;
     position: absolute;
     width: 100%;
-    height: ${height/5}px;
+    height: ${height / 5}px;
     overflow: visible;
     pointer-events: auto;
     transform-origin: 50% 50% 0px;

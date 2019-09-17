@@ -8,14 +8,21 @@ import { useSprings, animated, interpolate } from "react-spring";
 
 import { Content } from "../styles";
 
-let temp = 0;
+let temp = 100;
 
-switch(window.screen.availHeight) {
-  case 600:
-    temp = 80;
-    break;
-  default:
-  temp = 100;
+if(window.screen.availHeight <= 768) {
+  temp = 80;
+}
+
+if(window.screen.availHeight <= 640 || window.screen.availWidth <= 412 ) {
+  temp = 70;
+}
+
+if(window.screen.availHeight <= 480 ) {
+  temp = 60;
+}
+if(window.screen.availHeight <= 384   ) {
+  temp = 40;
 }
 
 
@@ -24,7 +31,7 @@ const fn = (order, down, originalIndex, curIndex, y) => index =>
   down && index === originalIndex
     ? {
         y: curIndex * temp + y,
-        scale: 1.1,
+        scale: 1,
         zIndex: "1",
         shadow: 15,
         immediate: n => n === "y" || n === "zIndex"
