@@ -21,7 +21,7 @@ if(window.screen.availHeight <= 640 || window.screen.availWidth <= 412 ) {
 if(window.screen.availHeight <= 480 ) {
   temp = 60;
 }
-if(window.screen.availHeight <= 384   ) {
+if(window.screen.availHeight <= 412   ) {
   temp = 40;
 }
 
@@ -63,13 +63,11 @@ export default ({ items, setCompleted, img }) => {
     setSprings(fn(newOrder, down, originalIndex, curIndex, y)); // Feed springs new style data, they'll animate the view without causing a single render
     if (!down) order.current = newOrder;
 
-    if (vars.event.type === "mouseup") {
-      console.dir(newOrder);
-
+//    if (vars.event.type === "mouseup") {
       if (isEqual(newOrder, [4, 1, 0, 3, 2])) {
         setCompleted(true);
       }
-    }
+//    }
   });
   return (
     <Content img={img} height={temp}>

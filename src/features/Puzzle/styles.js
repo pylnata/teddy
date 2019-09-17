@@ -2,7 +2,7 @@ import styled, { keyframes } from "styled-components";
 
 export const GameContainer = styled.div`
   max-width: 990px;
-  height: 95vh;
+  height: 85vh;
   max-height: 900px;
   width: 100%;
   background: rgba(255, 255, 255, 0.9);
@@ -34,7 +34,7 @@ if (window.screen.availHeight <= 640 || window.screen.availWidth <= 412 ) {
 if (window.screen.availHeight <= 480) {
   height = 300;
 }
-if (window.screen.availHeight <= 384) {
+if (window.screen.availHeight <= 412) {
   height = 200;
 }
 
@@ -104,8 +104,12 @@ export const Puzzles = styled.div`
     display: flex;
     justify-content: space-between;
     height: 15%;
-    width: 50%;
+
     max-height: 50px;
+    @media screen and (min-height: 600px) {
+      max-height: 70px;
+      margin-bottom: 10%;
+    }
     margin-bottom: 3%;
     > img {
       height: 100%;

@@ -76,10 +76,10 @@ const Bottom = styled.div`
   z-index: 1000;
   bottom: 1%;
   color: #fff;
-  > a:link,
+  a, a:link,
   a:active,
   a:visited {
-    color: #fff;
+    color: #ffffff;
   }
 `;
 
