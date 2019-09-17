@@ -1,6 +1,4 @@
-export { FailTimer } from "./FailTimer";
-
-export { DefaultTimer } from "./DefaultTimer";
+export { Timer } from "./Timer";
 
 export { PlayingTimer } from "./PlayingTimer";
 
