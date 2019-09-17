@@ -1,5 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+
+import { useImagesContext } from "../../../contexts/ImagesContext";
+
 import { vegetables, fruits, other } from "../config";
 
 const Items = styled.div`
@@ -91,7 +94,9 @@ const ItemsBottom = styled(Items)`
 
 `;
 
-export default ({ images, select }) => {
+export default ({ select }) => {
+  const { images } = useImagesContext();
+
   return (
     <>
       <ItemsLeft>

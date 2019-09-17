@@ -2,6 +2,8 @@ import React from "react";
 import { animated, useSpring } from "react-spring";
 import styled, { keyframes } from "styled-components";
 
+import { useImagesContext } from "../../../contexts/ImagesContext";
+
 const fly = props => keyframes`
 0%{
   background-image: url(${props.images['bird1.png']});
@@ -35,7 +37,9 @@ position: absolute;
   }
 `;
 
-export default ({ images }) => {
+export default () => {
+  const { images } = useImagesContext();
+
   const propsBird = useSpring({
     from: { left: "30%", transform: "scale(1)", opacity: 1 },
     to: [

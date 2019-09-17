@@ -69,7 +69,7 @@ const Ball = styled(animated.div)`
   border-radius: 50%;
 `;
 
-export default ({ images }) => {
+export default (props) => {
   const [reset, setReset] = useState(false);
 
   const { c } = useSpring({

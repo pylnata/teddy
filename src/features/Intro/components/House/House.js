@@ -7,6 +7,8 @@ import Satellite from "./components/Satellite";
 import Spider from "./components/Spider";
 import Flower from "./components/Flower";
 
+import { useImagesContext } from "../../../../contexts/ImagesContext";
+
 const House = styled.div`
   width: 29%;
   min-width: 200px;
@@ -42,13 +44,16 @@ const House = styled.div`
   }
 `;
 
-export default ({ images }) => {
+export default () => {
+
+  const { images } = useImagesContext();
+
   return (
     <House>
       <div style={{position: 'relative'}}>
         <img src={images["house4.png"]} alt="house" />
-        <Satellite images={images} />
-        <Github images={images} />
+        <Satellite />
+        <Github />
         <Spider img={images["spider.svg"]} />
         <Flower img={images["flower1.svg"]} />
       </div>

@@ -2,6 +2,7 @@ import React from "react";
 import { useSpring, animated, config } from "react-spring";
 import styled from "styled-components";
 
+import { useImagesContext } from "../../../../contexts/ImagesContext";
 import Tyres from "./components/Tyres";
 import Brum from "./components/Brum";
 import Gaz from "./components/Gaz";
@@ -52,7 +53,8 @@ const CarShadow = styled.div`
 `;
 
 export default props => {
-  const { selectedGame, images } = props;
+  const { selectedGame } = props;
+  const { images } = useImagesContext();
 
   let propsCar = useSpring({
     from: { left: selectedGame ? "32%" : "-10%" },

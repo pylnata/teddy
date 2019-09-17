@@ -5,16 +5,14 @@ import Items from "./components/Items";
 import { Nav, Roof } from "../../common/styles";
 import Control from "./components/Control";
 
-import { Game, Loader } from "../../common/styles";
+import { Game } from "../../common/styles";
 import { GameContainer, ShopContainer } from "./styles";
-
 
 import { vegetables, fruits, other } from "./config";
 import bg from "./images/bg.png";
 
 const Shop = props => {
-  const [images, setImages] = useState({});
-  const [imagesReadyCnt, setImagesReadyCnt] = useState(0);
+
   const [productsToBuy, setProductsToBuy] = useState([]);
   const [status, setStatus] = useState(null); // playing, fail, win
   const [selectedIndex, setSelectedIndex] = useState(-1);
@@ -40,35 +38,9 @@ const Shop = props => {
     setProductsToBuy(productsToBuy);
   }, []);
 
-  // import and preload images
   useEffect(() => {
-    const importedImages = {};
-    const r = require.context("./images/", true, /\.(png|jpe?g|svg)$/);
-    let i = 0;
-    r.keys().forEach(item => {
-      const importedImg = r(item);
-      importedImages[item.replace("./", "").replace("items/", "")] = importedImg;
-      const img = new Image();
-      img.onload = () => {
-        i++;
-        setImagesReadyCnt(i);
-      };
-      img.src = importedImg;
-    });
-
-    setImages(importedImages);
     setRandomItems();
   }, [setRandomItems]);
-
-
-  if (Object.keys(images).length !== imagesReadyCnt || imagesReadyCnt < 1) {
-    return (
-      <Game>
-        <Loader />
-      </Game>
-    );
-  }
-
 
 
   const fail = () => {
@@ -112,7 +84,6 @@ const Shop = props => {
         <ShopContainer>
           <Bag
             productsToBuy={productsToBuy}
-            images={images}
             reset={reset}
             status={status}
             selectedIndex={selectedIndex}
@@ -121,7 +92,7 @@ const Shop = props => {
           <Control fail={fail} status={status} />
         </ShopContainer>
 
-        <Items images={images} select={select} />
+        <Items select={select} />
       </GameContainer>
 
       <Nav type="next" to="/puzzle" />

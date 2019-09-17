@@ -106,7 +106,7 @@ export const Puzzles = styled.div`
     height: 15%;
 
     max-height: 50px;
-    @media screen and (min-height: 600px) {
+    @media screen and (max-height: 846px) and (orientation: portrait) {
       max-height: 70px;
       margin-bottom: 10%;
     }

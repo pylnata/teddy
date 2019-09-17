@@ -7,6 +7,7 @@ import Intro from "./features/Intro/Intro";
 import Shop from "./features/Shop/Shop";
 import Puzzle from "./features/Puzzle/Puzzle";
 
+import { ImagesProvider } from "./contexts/ImagesContext";
 
 const App = props => {
   const { location } = useRouter();
@@ -21,9 +22,51 @@ const App = props => {
   return transitions.map(({ item, props, key }) => (
     <animated.div key={key} style={props}>
       <Switch location={item}>
-        <Route path="/shop" exact component={Shop} />
-        <Route path="/puzzle" exact component={Puzzle} />
-        <Route path="/" exact component={Intro} />
+        <Route
+          path="/shop"
+          exact
+          render={props => (
+            <ImagesProvider
+              r={require.context(
+                "./features/Shop/images/",
+                true,
+                /\.(png|jpe?g|svg)$/
+              )}
+            >
+              <Shop {...props} />
+            </ImagesProvider>
+          )}
+        />
+        <Route
+          path="/puzzle"
+          exact
+          render={props => (
+            <ImagesProvider
+              r={require.context(
+                "./features/Puzzle/images/",
+                false,
+                /\.(png|jpe?g|svg)$/
+              )}
+            >
+              <Puzzle {...props} />
+            </ImagesProvider>
+          )}
+        />
+        <Route
+          path="/"
+          exact
+          render={props => (
+            <ImagesProvider
+              r={require.context(
+                "./features/Intro/images/",
+                false,
+                /\.(png|jpe?g|svg)$/
+              )}
+            >
+              <Intro {...props} />
+            </ImagesProvider>
+          )}
+        />
         <Redirect to="/" />
       </Switch>
     </animated.div>
@@ -31,4 +74,3 @@ const App = props => {
 };
 
 export default App;
-

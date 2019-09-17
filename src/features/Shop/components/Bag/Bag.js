@@ -1,14 +1,14 @@
 import React from "react";
 import { useSpring, animated } from "react-spring";
 
-import { Rules, Task, Container } from "./styles";
+import { useImagesContext } from "../../../../contexts/ImagesContext";
 
+import { Rules, Task, Container } from "./styles";
 import { Button } from "../../../../common/styles";
 
 export default props => {
-  const { productsToBuy, images, status, selectedIndex, reset} = props;
-
-  //status = 'win'
+  const { productsToBuy, status, selectedIndex, reset} = props;
+  const { images } = useImagesContext();
 
   const propsSelected = useSpring({
     from: { transform: "scale(1)" },
@@ -34,7 +34,6 @@ export default props => {
                 item.selected && selectedIndex === i ? propsSelected : null
               }
             >
-              {/* item.name */}
               <img src={images[item.name + ".svg"]} alt="" />
             </animated.div>
         ))}

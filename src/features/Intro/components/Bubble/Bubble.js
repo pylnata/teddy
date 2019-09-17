@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { useSpring, useChain, animated } from "react-spring";
 import styled from "styled-components";
 
+import { useImagesContext } from "../../../../contexts/ImagesContext";
 import Game from "./Game";
 
 const Dialog = styled.div`
@@ -84,7 +85,8 @@ width: 80%;
 margin: 5% auto;`;
 
 export default props => {
-  const { selectedGame, selectGame, images } = props;
+  const { selectedGame, selectGame } = props;
+  const { images } = useImagesContext();
 
   const springRef = useRef();
   const propsBubble = useSpring({
