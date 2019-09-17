@@ -122,7 +122,7 @@ export default props => {
   return (
     <Dialog>
       <animated.div style={{ position: "relative", ...propsBubble }}>
-        <Circular>Hello! Where are we going?</Circular>
+        <Circular>Hey, where are we going?</Circular>
       </animated.div>
       <Games style={propsGames}>
         <Game click={()=>selectGame('shop')} img={images["shop-game.svg"]} />
