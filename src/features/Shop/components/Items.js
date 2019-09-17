@@ -29,6 +29,11 @@ const Items = styled.div`
       max-height: 25px;
     }
 
+    @media screen and (max-height: 412px) {
+      max-width: 30px;
+      max-height: 30px;
+    }
+
     @media screen and (max-height: 320px) {
       max-width: 25px;
       max-height: 25px;

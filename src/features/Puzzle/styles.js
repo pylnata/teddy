@@ -7,16 +7,11 @@ export const GameContainer = styled.div`
   width: 100%;
   background: rgba(255, 255, 255, 0.9);
   margin: 0 auto;
-
   border-radius: 30px;
-
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-
-  padding: 0 20px 3% 20px;
-  //overflow: hidden;
   position: relative;
 `;
 
@@ -26,19 +21,28 @@ const rotate = keyframes`
 }
 `;
 
+let height = 450;
+if(window.screen.availHeight === 600) {
+//  height = 350;
+}
+
 export const WinContainer = styled.div`
-  margin: 40px auto 20px 0;
-  width: 450px;
-  //height: 100%;
+  margin: 0 auto;
+  //width: ${height}px;
+  //height: ${height}px;
+  width: ${height}px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
   z-index: 0;
   border-radius: 10px;
   overflow: hidden;
-  padding: 2rem;
+  //padding: 2rem;
   background: lightblue;
   > img {
-    width: 100%;
-    height: auto;
+    width: 96%;
+    height: 96%;
     background: lightblue;
   }
   &::before {
@@ -84,6 +88,8 @@ export const Puzzles = styled.div`
     display: flex;
     justify-content: space-between;
     height: 15%;
+    min-height: 70px;
+    margin-bottom: 40px;
     width: 100%;
     > img {
       height: 100%;
@@ -103,15 +109,15 @@ export const Puzzles = styled.div`
 export const Content = styled.div`
   grid-area: content;
   position: relative;
-  width: 450px;
-  //height: 540px;
+  width: ${height}px;
+  height: ${height}px;
   align-self: flex-start;
-  margin: 10% auto;
+  margin: 0 auto;
   > div {
     cursor: pointer;
     position: absolute;
     width: 100%;
-    height: 90px;
+    height: ${height/5}px;
     overflow: visible;
     pointer-events: auto;
     transform-origin: 50% 50% 0px;

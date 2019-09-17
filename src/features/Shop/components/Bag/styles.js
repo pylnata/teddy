@@ -57,6 +57,7 @@ export const Task = styled.div`
   position: relative;
   width: 65%;
   height: 55%;
+  margin-left: 1%;
   display: grid;
   grid-template-columns: repeat(4, minmax(24%, 1fr));
   grid-template-rows: repeat(3, minmax(24%, 1fr));
@@ -66,6 +67,9 @@ export const Task = styled.div`
     height: 42%;
   }
 
+  @media screen and (max-width: 846px) and (orientation: landscape) {
+    width: 59%;
+  }
 
   > div {
     background-image: linear-gradient(

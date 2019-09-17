@@ -8,19 +8,29 @@ import { useSprings, animated, interpolate } from "react-spring";
 
 import { Content } from "../styles";
 
+let temp = 0;
+
+switch(window.screen.availHeight) {
+  case 600:
+    temp = 80;
+    break;
+  default:
+  temp = 100;
+}
+
 
 // Returns fitting styles for dragged/idle items
 const fn = (order, down, originalIndex, curIndex, y) => index =>
   down && index === originalIndex
     ? {
-        y: curIndex * 100 + y,
+        y: curIndex * temp + y,
         scale: 1.1,
         zIndex: "1",
         shadow: 15,
         immediate: n => n === "y" || n === "zIndex"
       }
     : {
-        y: order.indexOf(index) * 100,
+        y: order.indexOf(index) * temp,
         scale: 1,
         zIndex: "0",
         shadow: 1,
@@ -38,7 +48,7 @@ export default ({ items, setCompleted, img }) => {
     } = vars;
     const curIndex = order.current.indexOf(originalIndex);
     const curRow = clamp(
-      Math.round((curIndex * 100 + y) / 100),
+      Math.round((curIndex * temp + y) / temp),
       0,
       items.length - 1
     );
@@ -55,7 +65,7 @@ export default ({ items, setCompleted, img }) => {
     }
   });
   return (
-    <Content img={img}>
+    <Content img={img} height={temp}>
       {springs.map(({ zIndex, shadow, y, scale }, i) => (
         <animated.div
           {...bind(i)}
