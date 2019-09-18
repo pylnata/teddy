@@ -1,6 +1,8 @@
+![Alt text](screen1.png?raw=true "Intro")
+
 # Teddy games
 
-![Alt text](screen1.png?raw=true "Intro")
+https://teddy-games-app.herokuapp.com/
 
 React App with cartoon animations and games for kids. 
 Developed just for fun and to learn React-spring library for animations.
