@@ -10,7 +10,8 @@ Developed just for fun and to learn React-spring library for animations.
 Used:
 * create-react-app;
 * styled-components;
-* react-spring; ( all 5 hooks)
+* react-spring; ( all 5 hooks);
+* react-hooks only.
 
 During development I also have written an article about import and preloading of bunch of images:
 
