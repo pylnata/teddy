@@ -57,6 +57,7 @@ const App = props => {
           exact
           render={props => (
             <ImagesProvider
+            intro={true}
               r={require.context(
                 "./features/Intro/images/",
                 false,

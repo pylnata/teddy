@@ -24,7 +24,7 @@ export default props => {
     setTimeout(() => props.history.push("/" + game), 1500);
   };
 
-  if (!bgIsLoaded) { 
+  if (!bgIsLoaded) {
     setBgIsLoaded(true);
     return (
       <div className="intro">
