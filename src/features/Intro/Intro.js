@@ -24,17 +24,17 @@ export default props => {
     setTimeout(() => props.history.push("/" + game), 1500);
   };
 
-  if (!bgIsLoaded) {
+  if (!bgIsLoaded) { 
     setBgIsLoaded(true);
     return (
-      <Intro img={bg}>
+      <div className="intro">
         <Loader />
-      </Intro>
+      </div>
     );
   }
 
   return (
-    <Intro img={bg}>
+    <Intro img={images["bg.svg"]}>
       <Sun img={images["sun.svg"]} />
       <Ballon img={images["ballon.svg"]} />
       <Bird />
