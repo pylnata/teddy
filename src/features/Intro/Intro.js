@@ -12,6 +12,7 @@ import Rainbow from "./components/Rainbow";
 import { useImagesContext } from "../../contexts/ImagesContext";
 
 import {Intro, CarWithBubble, Bottom} from  "./styles";
+import { Loader } from "../../common/styles";
 
 
 export default props => {
@@ -21,6 +22,14 @@ export default props => {
     setSelectedGame(true);
     setTimeout(() => props.history.push("/" + game), 1500);
   };
+
+  if (Object.keys(images).length < 1) {
+    return (
+      <Intro img={images["bg.svg"]}>
+        <Loader />
+      </Intro>
+    );
+  }
 
   return (
     <Intro img={images["bg.svg"]}>
