@@ -3,12 +3,12 @@ import styled from "styled-components";
 import { Loader } from "../common/styles";
 
 const Background = styled.div`
-height: 100vh;
-width: 100%;
-display: flex;
-justify-content: center;
-align-items: center;
-`
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 export const ImagesContext = createContext({
   images: {}
@@ -27,7 +27,9 @@ export const ImagesProvider = props => {
     let i = 0;
     r.keys().forEach(item => {
       const importedImg = r(item);
-      importedImages[item.replace("./", "").replace("items/", "")] = importedImg;
+      importedImages[
+        item.replace("./", "").replace("items/", "")
+      ] = importedImg;
       const img = new Image();
       img.onload = () => {
         i++;
@@ -46,11 +48,17 @@ export const ImagesProvider = props => {
     );
   }
 
-  return (
+  const content = (
     <ImagesContext.Provider value={{ images }}>
       {props.children}
     </ImagesContext.Provider>
   );
+
+  if (props.intro) {
+    return <Background className="intro">{content}</Background>;
+  }
+
+  return content;
 };
 
 export const ImagesConsumer = ImagesContext.Consumer;

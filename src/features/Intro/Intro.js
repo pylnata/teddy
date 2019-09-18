@@ -34,7 +34,7 @@ export default props => {
   }
 
   return (
-    <Intro img={images["bg.svg"]}>
+    <>
       <Sun img={images["sun.svg"]} />
       <Ballon img={images["ballon.svg"]} />
       <Bird />
@@ -56,6 +56,6 @@ export default props => {
           </a>
         </div>
       </Bottom>
-    </Intro>
+    </>
   );
 };
