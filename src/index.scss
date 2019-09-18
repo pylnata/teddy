@@ -12,7 +12,14 @@ body {
   font-size: 1.6rem;
   background-color: #00b4ff;
   color: #333;
-  
+
+  width: 100%;
+  height: 100vh;
+  background-image: url("./features/Intro/images/bg.svg");
+  background-size: cover;
+  background-position: -3px 15%;
+  background-repeat: no-repeat;
+
 }
 
 html {

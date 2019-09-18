@@ -24,7 +24,7 @@ export default props => {
     setTimeout(() => props.history.push("/" + game), 1500);
   };
 
-  if (Object.keys(images).length > 0 && !bgIsLoaded) {
+  if (!bgIsLoaded) {
     setBgIsLoaded(true);
     return (
       <Intro img={bg}>
