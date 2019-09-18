@@ -13,7 +13,7 @@ import { useImagesContext } from "../../contexts/ImagesContext";
 
 import {Intro, CarWithBubble, Bottom} from  "./styles";
 import { Loader } from "../../common/styles";
-
+import bg from "./images/bg.svg";
 
 export default props => {
   const [selectedGame, setSelectedGame] = useState(false);
@@ -25,14 +25,14 @@ export default props => {
 
   if (Object.keys(images).length < 1) {
     return (
-      <Intro img={images["bg.svg"]}>
+      <Intro img={bg}>
         <Loader />
       </Intro>
     );
   }
 
   return (
-    <Intro img={images["bg.svg"]}>
+    <Intro img={bg}>
       <Sun img={images["sun.svg"]} />
       <Ballon img={images["ballon.svg"]} />
       <Bird />
