@@ -19,7 +19,7 @@ const fly = props => keyframes`
 const Bird = styled(animated.div)`
 background-image: url(${props => props.images['bird1.png']});
 position: absolute;
-  left: 20%;
+  left: 30%;
   top: 2%;
   width: 15%;
   height: 15%;
@@ -37,7 +37,7 @@ export default () => {
   const { images } = useImagesContext();
 
   const propsBird = useSpring({
-    from: { left: "20%", transform: "scale(1)", opacity: 1 },
+    from: { left: "30%", transform: "scale(1)", opacity: 1 },
     to: [
       {
         left: "90%",
