@@ -59,7 +59,7 @@ export default () => {
   };
 
   return (
-    <Game bg={bg} size="400px" filter="1">
+    <Game bg={bg} size="400px" filter="1" style={{paddingRight: '10%'}}>
       <Nav type="back" to="/shop" />
       <GameContainer>
           <div className="options" onClick={select}>
