@@ -48,17 +48,21 @@ export const ImagesProvider = props => {
     );
   }
 
-  const content = (
+  if (props.intro) {
+    return (
+      <Background className="intro">
+        <ImagesContext.Provider value={{ images }}>
+          {props.children}
+        </ImagesContext.Provider>
+      </Background>
+    );
+  }
+
+  return (
     <ImagesContext.Provider value={{ images }}>
       {props.children}
     </ImagesContext.Provider>
   );
-
-  if (props.intro) {
-    return <Background className="intro">{content}</Background>;
-  }
-
-  return content;
 };
 
 export const ImagesConsumer = ImagesContext.Consumer;

@@ -19,8 +19,8 @@ const fly = props => keyframes`
 const Bird = styled(animated.div)`
 background-image: url(${props => props.images['bird1.png']});
 position: absolute;
-  left: 0;
-  top: 0;
+  left: 20%;
+  top: 2%;
   width: 15%;
   height: 15%;
   z-index: 15;
@@ -29,11 +29,7 @@ position: absolute;
   animation: ${fly} 0.5s infinite forwards;
   overflow: hidden;
   @media screen and (min-height: 800px) {
-    top: 20%;
-  }
-  @media screen and (orientation: portrait) {
-    width: 20%;
-    height: 20%;
+    top: 10%;
   }
 `;
 
@@ -41,13 +37,13 @@ export default () => {
   const { images } = useImagesContext();
 
   const propsBird = useSpring({
-    from: { left: "30%", transform: "scale(1)", opacity: 1 },
+    from: { left: "20%", transform: "scale(1)", opacity: 1 },
     to: [
       {
         left: "90%",
         transform: "scale(0.2)",
         opacity: 1,
-        config: { duration: 10000 }
+        config: { duration: 22000 }
       },
       {
         left: "90%",

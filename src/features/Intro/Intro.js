@@ -11,30 +11,20 @@ import Rainbow from "./components/Rainbow";
 
 import { useImagesContext } from "../../contexts/ImagesContext";
 
-import {Intro, CarWithBubble, Bottom} from  "./styles";
-import { Loader } from "../../common/styles";
-import bg from "./images/bg.svg";
+import {CarWithBubble, Bottom} from  "./styles";
+
 
 export default props => {
   const [selectedGame, setSelectedGame] = useState(false);
-  const [bgIsLoaded, setBgIsLoaded] = useState(false);
   const { images } = useImagesContext();
   const selectGameHandler = game => {
     setSelectedGame(true);
     setTimeout(() => props.history.push("/" + game), 1500);
   };
 
-  if (!bgIsLoaded) {
-    setBgIsLoaded(true);
-    return (
-      <div className="intro">
-        <Loader />
-      </div>
-    );
-  }
-
   return (
     <>
+
       <Sun img={images["sun.svg"]} />
       <Ballon img={images["ballon.svg"]} />
       <Bird />

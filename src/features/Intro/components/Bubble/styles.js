@@ -12,7 +12,7 @@ export const Dialog = styled.div`
 
   @media screen and (max-width: 1000px) {
     width: 40%;
-    margin-right: -10%;
+    margin-right: -5%;
   }
   @media screen and (max-width: 767px) {
     font-size: 2rem;

@@ -4,13 +4,14 @@ import { useSpring, useChain, animated } from "react-spring";
 import { useImagesContext } from "../../../../contexts/ImagesContext";
 import Game from "./Game";
 
-import { Dialog, Circular, Games } from "./styles";
+import { Dialog, Circular, Games} from "./styles";
 
 export default props => {
   const { selectedGame, selectGame } = props;
   const { images } = useImagesContext();
 
   const springRef = useRef();
+
   const propsBubble = useSpring({
     from: {
       opacity: selectedGame ? 1 : 0,
@@ -27,21 +28,24 @@ export default props => {
         config: { duration: 250 }
       }
     ],
-    ref: springRef
+    ref: springRef,
+    immediate: selectedGame
   });
 
   const gamesRef = useRef();
   const propsGames = useSpring({
-    from: { transform: `scale(${selectedGame ? 1 : 0})` },
+    from: {
+      transform: `scale(${selectedGame ? 1 : 0})` },
     to: [
       {
         transform: `scale(${selectedGame ? 0 : 1})`
       }
     ],
-    ref: gamesRef
+    ref: gamesRef,
+    immediate: selectedGame
   });
 
-  useChain([springRef, gamesRef], [selectedGame ? 0 : 2, 3.25]);
+  useChain([springRef, gamesRef], [selectedGame ? 0 : 2, selectedGame ? 0 : 3.25]);
 
   return (
     <Dialog>

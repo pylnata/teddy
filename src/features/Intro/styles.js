@@ -1,34 +1,5 @@
 import styled from "styled-components";
 
-export const Intro = styled.div`
-  height: 100vh;
-  width: 100%;
-  max-width: 2000px;
-  max-height: 1280px;
-  min-height: 213px;
-  margin: 0 auto;
-  position: relative;
-  background-image: url(${({ img }) => img});
-  background-size: cover;
-  background-position: -3px 15%;
-  background-repeat: no-repeat;
-  overflow: hidden;
-  @media screen and (orientation: portrait) {
-    background-position-x: 65%;
-  }
-  @media screen and (orientation: portrait) and (min-height: 800px) {
-    background-position-x: 60%;
-  }
-
-  @media screen and (max-width: 1000px) {
-    background-position-x: 80%;
-  }
-
-  @media screen and (max-width: 384px) {
-    background-position-x: 85%;
-  }
-`;
-
 export const CarWithBubble = styled.div`
   position: absolute;
   z-index: 1000;
