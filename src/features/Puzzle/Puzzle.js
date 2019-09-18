@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { disablePageScroll, enablePageScroll } from "scroll-lock";
 
 import { Game, Nav } from "../../common/styles";
 import { GameContainer, WinContainer, Puzzles } from "./styles";
@@ -15,7 +16,13 @@ export default () => {
   const [currentImage, setCurrentImage] = useState(null);
   const [completed, setCompleted] = useState(false);
 
-  // import and preload images
+  useEffect(() => {
+    disablePageScroll();
+    return ()=> {
+      enablePageScroll();
+    }
+  }, []);
+
   useEffect(() => {
     if (Object.keys(images).length > 0) {
       setCurrentImage(images["1.png"]);
@@ -38,7 +45,7 @@ export default () => {
   if (completed) {
     content = (
       <WinContainer>
-        <animated.img src={currentImage} alt="" style={propsImage} />
+        <img src={currentImage} alt=""  />
       </WinContainer>
     );
   }
@@ -55,16 +62,15 @@ export default () => {
     <Game bg={bg} size="400px" filter="1">
       <Nav type="back" to="/shop" />
       <GameContainer>
-        <Puzzles>
-          <div className="left" onClick={select}>
+          <div className="options" onClick={select}>
             <img src={images["1.png"]} alt="" />
             <img src={images["2.png"]} alt="" />
             <img src={images["3.png"]} alt="" />
             <img src={images["4.png"]} alt="" />
           </div>
-
+          <div className="inner">
           {content}
-        </Puzzles>
+          </div>
       </GameContainer>
     </Game>
   );

@@ -1,18 +1,53 @@
 import styled, { keyframes } from "styled-components";
 
 export const GameContainer = styled.div`
-  max-width: 990px;
-  height: 85vh;
-  max-height: 900px;
+  max-width: 550px;
+  height: 95vh;
+  max-height: 750px;
   width: 100%;
   background: rgba(255, 255, 255, 0.9);
   margin: 0 auto;
   border-radius: 30px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   position: relative;
+  padding-top: 20px;
+
+  .inner {
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-10%);
+  }
+  .options {
+    align-self: center;
+    display: flex;
+    justify-content: space-between;
+    height: 15%;
+    width: 100%;
+    padding: 0 10%;
+    max-height: 100px;
+    @media screen and (max-height: 846px) and (orientation: portrait) {
+      max-height: 70px;
+//      margin-bottom: 10%;
+    }
+//    margin-bottom: 3%;
+    > img {
+      height: 100%;
+      border: 2px solid #ffffff;
+      padding: 0px;
+      background: lightblue;
+      cursor: pointer;
+      transform: scale(1);
+      transition: 0.1s transform;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
 `;
 
 const rotate = keyframes`
@@ -23,9 +58,9 @@ const rotate = keyframes`
 
 let height = 450;
 
-if (window.screen.availHeight <= 768) {
-  height = 320;
-}
+//if (window.screen.availHeight <= 768) {
+//  height = 320;
+//}
 
 if (window.screen.availHeight <= 640 || window.screen.availWidth <= 412 ) {
   height = 300;
@@ -43,9 +78,8 @@ console.log(window.screen.availHeight, height);
 
 export const WinContainer = styled.div`
   margin: 0 auto;
-  //width: ${height}px;
-  //height: ${height}px;
   width: ${height}px;
+  //height:${height}px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -53,7 +87,7 @@ export const WinContainer = styled.div`
   z-index: 0;
   border-radius: 10px;
   overflow: hidden;
-  //padding: 2rem;
+  padding: 1rem;
   background: lightblue;
   > img {
     width: 96%;
@@ -91,47 +125,14 @@ export const WinContainer = styled.div`
   }
 `;
 
-export const Puzzles = styled.div`
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-direction: column;
-  height: 90%;
-  width:95%;
 
-  .left {
-    align-self: center;
-    display: flex;
-    justify-content: space-between;
-    height: 15%;
-
-    max-height: 50px;
-    @media screen and (max-height: 846px) and (orientation: portrait) {
-      max-height: 70px;
-      margin-bottom: 10%;
-    }
-    margin-bottom: 3%;
-    > img {
-      height: 100%;
-      border: 2px solid #ffffff;
-      padding: 0px;
-      background: lightblue;
-      cursor: pointer;
-      transform: scale(1);
-      transition: 0.1s transform;
-      &:hover {
-        transform: scale(1.1);
-      }
-    }
-  }
-`;
 
 export const Content = styled.div`
   grid-area: content;
   position: relative;
   width: ${height}px;
   height: ${height}px;
-  align-self: flex-start;
+  align-self: center;
   margin: 0 auto;
   > div {
     cursor: pointer;

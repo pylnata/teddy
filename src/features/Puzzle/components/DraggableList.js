@@ -63,11 +63,12 @@ export default ({ items, setCompleted, img }) => {
     setSprings(fn(newOrder, down, originalIndex, curIndex, y)); // Feed springs new style data, they'll animate the view without causing a single render
     if (!down) order.current = newOrder;
 
-//    if (vars.event.type === "mouseup") {
+    if (vars.event.type === "mouseup" || vars.event.type === "touchend") {
       if (isEqual(newOrder, [4, 1, 0, 3, 2])) {
         setCompleted(true);
       }
-//    }
+    }
+
   });
   return (
     <Content img={img} height={temp}>

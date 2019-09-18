@@ -11,6 +11,31 @@ import { GameContainer, ShopContainer } from "./styles";
 import { vegetables, fruits, other } from "./config";
 import bg from "./images/bg.png";
 
+
+import tomato from "./images/items/tomato.svg";
+import onion from "./images/items/onion.svg";
+import potato from "./images/items/potato.svg";
+import broccoli from "./images/items/broccoli.svg";
+import cabbage from "./images/items/cabbage.svg";
+import carrot from "./images/items/carrot.svg";
+
+import watermelon from "./images/items/watermelon.svg";
+import bananas from "./images/items/bananas.svg";
+import grape from "./images/items/grapes.svg";
+import orange from "./images/items/orange.svg";
+import apple from "./images/items/apple.svg";
+import strawberry from "./images/items/strawberry.svg";
+import pineapple from "./images/items/pineapple.svg";
+
+import milk from "./images/items/milk.svg";
+import pasta from "./images/items/pasta.svg";
+import croissant from "./images/items/croissant.svg";
+import mustard from "./images/items/mustard.svg";
+import cake from "./images/items/cake.svg";
+import eggs from "./images/items/eggs.svg";
+import jam from "./images/items/jam.svg";
+
+
 const Shop = props => {
 
   const [productsToBuy, setProductsToBuy] = useState([]);
