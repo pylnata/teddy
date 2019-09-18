@@ -17,13 +17,15 @@ import bg from "./images/bg.svg";
 
 export default props => {
   const [selectedGame, setSelectedGame] = useState(false);
+  const [bgIsLoaded, setBgIsLoaded] = useState(false);
   const { images } = useImagesContext();
   const selectGameHandler = game => {
     setSelectedGame(true);
     setTimeout(() => props.history.push("/" + game), 1500);
   };
 
-  if (Object.keys(images).length < 1) {
+  if (Object.keys(images).length > 0 && !bgIsLoaded) {
+    setBgIsLoaded(true);
     return (
       <Intro img={bg}>
         <Loader />

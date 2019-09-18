@@ -13,6 +13,7 @@ export const Rules = styled.div`
   z-index: 1000;
   display: flex;
   flex-direction: column;
+  align-items:center;
   font-size: 2rem;
   background-color: #fff;
   color: #333;

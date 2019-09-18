@@ -62,18 +62,18 @@ let height = 450;
 //  height = 320;
 //}
 
-if (window.screen.availHeight <= 640 || window.screen.availWidth <= 412 ) {
+if (window.screen.height <= 640 || window.screen.width <= 412 ) {
   height = 300;
 }
 
-if (window.screen.availHeight <= 480) {
+if (window.screen.height <= 480) {
   height = 300;
 }
-if (window.screen.availHeight <= 412) {
+if (window.screen.height <= 412) {
   height = 200;
 }
 
-console.log(window.screen.availHeight, height);
+console.log(window.screen.height, height);
 
 
 export const WinContainer = styled.div`
@@ -90,8 +90,8 @@ export const WinContainer = styled.div`
   padding: 1rem;
   background: lightblue;
   > img {
-    width: 96%;
-    height: 96%;
+    width: 100%;
+   // height: 100%;
     background: lightblue;
   }
   &::before {

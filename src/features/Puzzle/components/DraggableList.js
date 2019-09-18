@@ -10,18 +10,18 @@ import { Content } from "../styles";
 
 let temp = 100;
 
-if(window.screen.availHeight <= 768) {
-  temp = 80;
-}
+//if(window.screen.height <= 768) {
+//  temp = 80;
+//}
 
-if(window.screen.availHeight <= 640 || window.screen.availWidth <= 412 ) {
+if(window.screen.height <= 640 || window.screen.width <= 412 ) {
   temp = 70;
 }
 
-if(window.screen.availHeight <= 480 ) {
+if(window.screen.height <= 480 ) {
   temp = 60;
 }
-if(window.screen.availHeight <= 412   ) {
+if(window.screen.height <= 412   ) {
   temp = 40;
 }
 

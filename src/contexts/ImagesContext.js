@@ -1,7 +1,7 @@
 import React, { createContext, useState, useContext, useEffect } from "react";
 import styled from "styled-components";
 import { Loader } from "../common/styles";
-import bg from "../features/Intro/images/bg.svg";
+//import bg from "../features/Intro/images/bg.svg";
 
 const Background = styled.div`
 height: 100vh;
@@ -45,7 +45,7 @@ export const ImagesProvider = props => {
 
   if (Object.keys(images).length !== imagesReadyCnt || imagesReadyCnt < 1) {
     return (
-      <Background img={bg}>
+      <Background>
         <Loader />
       </Background>
     );

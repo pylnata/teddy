@@ -55,7 +55,7 @@ export const Loader = styled.div`
   }
 `;
 
-export const Button = styled.div`
+export const Button = styled.button`
   border: 1px #77c76e solid;
   background: #60af56;
   color: #fff;
@@ -73,7 +73,7 @@ export const Button = styled.div`
     transform: scale(1.1);
   }
   @media screen and (max-width: 768px) {
-    font-size: 1rem;
+    font-size: 1.6rem;
     padding: 1rem;
   }
   @media screen and (max-height: 213px) {
