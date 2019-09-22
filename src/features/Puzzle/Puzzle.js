@@ -2,14 +2,12 @@ import React, { useState, useEffect } from "react";
 import { disablePageScroll, enablePageScroll } from "scroll-lock";
 
 import { Game, Nav } from "../../common/styles";
-import { GameContainer, WinContainer, Puzzles } from "./styles";
+import { GameContainer, WinContainer } from "./styles";
 
 import DraggableList from "./components/DraggableList";
 
-import bg from "./images/bg.png";
 
 import { useImagesContext } from "../../contexts/ImagesContext";
-import { useSpring, animated } from "react-spring";
 
 export default () => {
   const { images } = useImagesContext();
@@ -37,10 +35,6 @@ export default () => {
     />
   );
 
-  const propsImage = useSpring({
-    from: { transform: "scale(1)" },
-    to: [{ transform: "scale(1.1)" }, { transform: "scale(1)" }]
-  });
 
   if (completed) {
     content = (
@@ -59,7 +53,7 @@ export default () => {
   };
 
   return (
-    <Game bg={bg} size="400px" filter="1" style={{paddingRight: '10%'}}>
+    <Game bg={images["bg.png"]} size="400px" filter="1" style={{paddingRight: '10%'}}>
       <Nav type="back" to="/shop" />
       <GameContainer>
           <div className="options" onClick={select}>

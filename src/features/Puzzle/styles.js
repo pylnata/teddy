@@ -58,10 +58,6 @@ const rotate = keyframes`
 
 let height = 450;
 
-//if (window.screen.availHeight <= 768) {
-//  height = 320;
-//}
-
 if (window.screen.height <= 640 || window.screen.width <= 412 ) {
   height = 300;
 }
@@ -72,8 +68,6 @@ if (window.screen.height <= 480) {
 if (window.screen.height <= 412) {
   height = 200;
 }
-
-console.log(window.screen.height, height);
 
 
 export const WinContainer = styled.div`

@@ -1,13 +1,19 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import { useTransition, animated } from "react-spring";
 
 import useRouter from "./hooks/useRouter";
 import Intro from "./features/Intro/Intro";
-import Shop from "./features/Shop/Shop";
-import Puzzle from "./features/Puzzle/Puzzle";
 
 import { ImagesProvider } from "./contexts/ImagesContext";
+
+const Shop = React.lazy(() => {
+  return import("./features/Shop/Shop");
+});
+
+const Puzzle = React.lazy(() => {
+  return import("./features/Puzzle/Puzzle");
+});
 
 const App = props => {
   const { location } = useRouter();
@@ -21,6 +27,7 @@ const App = props => {
   });
   return transitions.map(({ item, props, key }) => (
     <animated.div key={key} style={props}>
+      <Suspense fallback={""}>
       <Switch location={item}>
         <Route
           path="/shop"
@@ -70,6 +77,7 @@ const App = props => {
         />
         <Redirect to="/" />
       </Switch>
+      </Suspense>
     </animated.div>
   ));
 };
