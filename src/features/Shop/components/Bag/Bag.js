@@ -34,7 +34,7 @@ export default props => {
                 item.selected && selectedIndex === i ? propsSelected : null
               }
             >
-              <img src={images[item.name + ".svg"]} alt="" />
+              <img src={images[item.name + ".svg"]} alt={item.name} />
             </animated.div>
         ))}
       </Task>

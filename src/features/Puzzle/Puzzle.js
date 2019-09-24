@@ -39,7 +39,7 @@ export default () => {
   if (completed) {
     content = (
       <WinContainer>
-        <img src={currentImage} alt=""  />
+        <img src={currentImage} alt="puzzle"  />
       </WinContainer>
     );
   }
@@ -57,10 +57,10 @@ export default () => {
       <Nav type="back" to="/shop" />
       <GameContainer>
           <div className="options" onClick={select}>
-            <img src={images["1.png"]} alt="" />
-            <img src={images["2.png"]} alt="" />
-            <img src={images["3.png"]} alt="" />
-            <img src={images["4.png"]} alt="" />
+            <img src={images["1.png"]} alt="puzzle1" />
+            <img src={images["2.png"]} alt="puzzle2" />
+            <img src={images["3.png"]} alt="puzzle3" />
+            <img src={images["4.png"]} alt="puzzle4" />
           </div>
           <div className="inner">
           {content}

@@ -25,11 +25,11 @@ export default ({img}) => {
   return (
     <>
       <Tyre>
-        <animated.img style={propsTyre} src={img} />
+        <animated.img style={propsTyre} src={img} alt="tyre" />
       </Tyre>
 
       <TyreFront>
-        <animated.img style={propsTyre} src={img} />
+        <animated.img style={propsTyre} src={img} alt="tyre" />
       </TyreFront>
     </>
   );

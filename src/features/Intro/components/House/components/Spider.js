@@ -47,7 +47,7 @@ export default ({ img }) => {
   return (
     <Spider>
       <SpiderLine style={propsLine} />
-      <SpiderImg><img src={img} alt="" /></SpiderImg>
+      <SpiderImg><img src={img} alt="spider" /></SpiderImg>
     </Spider>
   );
 };
