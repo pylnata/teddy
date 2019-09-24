@@ -1,7 +1,17 @@
 {
-  "short_name": "teddy-games-app",
+  "short_name": "Teddy games",
   "name": "Teddy games App",
   "icons": [
+    {
+      "src": "icons-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "icons-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
     {
       "src": "favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
