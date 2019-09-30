@@ -11,7 +11,7 @@ Used:
 * create-react-app;
 * styled-components;
 * react-spring; ( all 5 hooks);
-* react-hooks only.
+* functional components and react-hooks only.
 
 During development I also have written an article about import and preloading of bunch of images:
 
