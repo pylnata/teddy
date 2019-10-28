@@ -2,7 +2,7 @@
 
 # Teddy games
 
-https://teddy-games-app.herokuapp.com/
+https://pylnata.github.io/teddy/
 
 React App with cartoon animations and games for kids. 
 Developed just for fun and to learn React-spring library for animations.
