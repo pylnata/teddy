@@ -12,7 +12,7 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-router-dom": "^5.0.1",
-    "react-scripts": "3.1.1",
+    "react-scripts": "5.0.1",
     "react-spring": "^8.0.27",
     "react-use-gesture": "^5.2.4",
     "scroll-lock": "^2.1.2",
